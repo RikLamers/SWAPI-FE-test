@@ -11,11 +11,11 @@
         border-radius: 3px;
         color: #6D6C7C;
 
-        @media only screen and (min-width: 576px) {
+        @media only screen and (min-width: breakpoint(sm)) {
             padding: 10px 30px 10px 50px;
         }
 
-        @media only screen and (min-width: 922px) {
+        @media only screen and (min-width: breakpoint(lg)) {
             padding: 10px 40px 10px 60px;
         }
     }
@@ -27,11 +27,11 @@
         top: 50%;
         transform: translateY(-50%);
 
-        @media only screen and (min-width: 576px) {
+        @media only screen and (min-width: breakpoint(sm)) {
             left: 10px;
         }
 
-        @media only screen and (min-width: 922px) {
+        @media only screen and (min-width: breakpoint(lg)) {
             left: 20px;
         }
 

@@ -1,0 +1,11 @@
+$bp: (
+    xs: 480px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+@function breakpoint($break-level) {
+	@return map-get($bp, $break-level)
+}

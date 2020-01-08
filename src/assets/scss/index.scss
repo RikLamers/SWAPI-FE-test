@@ -1,11 +1,13 @@
 // Base
 @import './base/variables';
-@import './base/typography';
+@import './base/base';
 
 // Views
 @import './views/home';
 @import './views/planets';
 
 // Components
+@import './components/card';
+@import './components/footer';
 @import './components/header';
 @import './components/searchbar';

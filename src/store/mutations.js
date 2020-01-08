@@ -1,1 +1,5 @@
-export default {}
+export default {
+  getInitData (state, payload) {
+    state.characters = payload
+  }
+}

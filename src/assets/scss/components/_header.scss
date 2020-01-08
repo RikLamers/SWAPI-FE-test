@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 500px;
+    height: 400px;
     width: 100vw;
     color: white;
 
@@ -20,7 +20,7 @@
         height: 30px;
         width: auto;
 
-        @media only screen and (min-width: 992px) {
+        @media only screen and (min-width: breakpoint(lg)) {
             height: 50px;
         }
 

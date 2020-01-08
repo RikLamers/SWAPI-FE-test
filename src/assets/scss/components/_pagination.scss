@@ -1,0 +1,25 @@
+.c-pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        padding: 10px 0;
+        background: transparent;
+        border-radius: 3px;
+        border: 1px solid black;
+        min-width: 250px;
+        width: 100%;
+        text-transform: uppercase;
+
+        @media only screen and (min-width: breakpoint(xs)) {
+            width: 300px;
+        }
+
+        @media only screen and (min-width: breakpoint(lg)) {
+            width: 400px;
+        }
+
+    }
+
+}

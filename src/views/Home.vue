@@ -20,7 +20,7 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <h1>pagination</h1>
+              <Pagination />
             </div>
           </div>
         </section>
@@ -60,7 +60,9 @@
             <Card type="row" />
           </div>
           <div class="row">
-            <h1>pagination</h1>
+            <div class="col-12">
+              <Pagination />
+            </div>
           </div>
         </section>
       </div>
@@ -75,13 +77,15 @@ import { mapState } from 'vuex'
 import Card from '@/components/Card.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
   name: 'home',
   components: {
     Card,
     Footer,
-    Header
+    Header,
+    Pagination
   },
   created () {
     this.$store.dispatch('getAllData')

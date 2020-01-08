@@ -1,0 +1,37 @@
+// Responsive headings via: https://css-tricks.com/snippets/css/fluid-typography/
+
+h1 {
+    font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (1240 - 320)));
+}
+
+h2 {
+    font-size: calc(28px + (32 - 28) * ((100vw - 320px) / (1240 - 320)));
+}
+
+h3 {
+    font-size: calc(24px + (28 - 24) * ((100vw - 320px) / (1240 - 320)));
+}
+
+h4 {
+    font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1240 - 320)));
+}
+
+h5 {
+    font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1240 - 320)));
+}
+
+h6 {
+    font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1240 - 320)));
+}
+
+p, a, button {
+    font-size: 16px;
+}
+
+a {
+    cursor: pointer;
+}
+
+section {
+    padding: 30px 0;
+}

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Planets from '@/views/Planets.vue'
+import Characters from '@/views/Characters.vue'
 
 Vue.use(VueRouter)
 
@@ -13,9 +13,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/planets',
-    name: 'planets',
-    component: Planets
+    path: '/characters',
+    name: 'characters',
+    component: Characters
   }
 ]
 

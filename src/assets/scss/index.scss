@@ -4,11 +4,13 @@
 
 // Views
 @import './views/home';
-@import './views/planets';
+@import './views/characters';
 
 // Components
 @import './components/card';
+@import './components/dropdown';
 @import './components/footer';
 @import './components/header';
 @import './components/pagination';
 @import './components/searchbar';
+@import './components/title';

@@ -4,12 +4,7 @@
     <main class="container">
       <div class="v-home">
         <section class="characters">
-          <div class="row">
-            <div class="col-12">
-              <h2>Populair Starships</h2>
-              <hr />
-            </div>
-          </div>
+          <Title title="Populair Starships" />
           <div class="row">
             <Card />
             <Card />
@@ -25,12 +20,7 @@
           </div>
         </section>
         <section class="planets">
-          <div class="row">
-            <div class="col-12">
-              <h2>Populair Planets</h2>
-              <hr />
-            </div>
-          </div>
+          <Title title="Populair Planets" />
           <div class="row">
             <Card type="img-only" />
             <Card type="img-only" />
@@ -47,12 +37,7 @@
           </div>
         </section>
         <section class="characters">
-          <div class="row">
-            <div class="col-12">
-              <h2>Populair Characters</h2>
-              <hr />
-            </div>
-          </div>
+          <Title title="Populair Characters" />
           <div class="row">
             <Card type="row" />
             <Card type="row" />
@@ -78,6 +63,7 @@ import Card from '@/components/Card.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Pagination from '@/components/Pagination.vue'
+import Title from '@/components/Title.vue'
 
 export default {
   name: 'home',
@@ -85,7 +71,8 @@ export default {
     Card,
     Footer,
     Header,
-    Pagination
+    Pagination,
+    Title
   },
   created () {
     this.$store.dispatch('getAllData')

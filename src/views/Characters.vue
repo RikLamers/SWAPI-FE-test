@@ -15,8 +15,8 @@
           </div>
           <div class="row">
             <Loader v-if="!characters.results" />
-            <div v-else v-for="(character, index) of displayedPosts" :key="character + index" class="col-12 col-lg-6 d-flex">
-              <Card type="row" :data="character" />
+            <div v-else v-for="(character, index) of displayedPosts" :key="character + index" :class="selectedView === 'Grid' ? 'col-12 col-lg-6 d-flex' : 'col-12'">
+              <Card :view="selectedView" type="row" :data="character" />
             </div>
           </div>
         </section>
@@ -96,7 +96,6 @@ export default {
     ]),
     displayedPosts () {
       const filteredCharacterObj = this.$store.getters.filteredCharacters(this.selectedGender)
-      console.log(filteredCharacterObj)
       const start = (this.currentPage - 1) * this.characters.postsPerPage
       const end = start + this.characters.postsPerPage
       if (filteredCharacterObj) {
@@ -108,7 +107,7 @@ export default {
     maxAmountOfPosts () {
       const filteredCharacterObj = this.$store.getters.filteredCharacters(this.selectedGender)
       if (filteredCharacterObj) return filteredCharacterObj.length
-      return 0
+      return null
     }
   }
 }

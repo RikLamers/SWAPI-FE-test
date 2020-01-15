@@ -9,7 +9,7 @@
       </div>
     </router-link>
   </div>
-  <div v-else-if="type === 'row'" class="c-card" :class="type === 'row' ? 'c-card--row' : null">
+  <div v-else-if="type === 'row'" class="c-card" :class="characterClasses()">
     <router-link :to="`${data.category}/${data.id}`">
       <img class="c-card__img" src="~@/assets/img/characters/character-1.jpg" alt="Star Wars character" />
       <div class="c-card__content">
@@ -17,9 +17,6 @@
         <i>Gender: {{ data.gender }}</i>
         <div class="c-card__content__p">
           <p>Birth year: {{ data.birth_year }}</p>
-          <!-- <span>
-            <a href="#">read More</a>
-          </span> -->
         </div>
       </div>
     </router-link>
@@ -44,7 +41,18 @@ export default {
   props: [
     'type',
     'data',
-    'link'
-  ]
+    'link',
+    'view'
+  ],
+  methods: {
+    characterClasses () {
+      console.log(this.view === 'Grid')
+      return {
+        'c-card--row': this.type === 'row',
+        'c-card__grid': this.view === 'Grid',
+        'c-card__list': this.view === 'List'
+      }
+    }
+  }
 }
 </script>

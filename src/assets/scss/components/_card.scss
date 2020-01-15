@@ -117,14 +117,33 @@
 
             &__img {
                 width: auto;
+                max-height: 175px;
+                
+                @media only screen and (min-width: breakpoint(xs)) {
+                    max-height: 200px;
+                }
+
+                @media only screen and (min-width: breakpoint(md)) {
+                    max-height: 250px;
+                }
+
             }
 
             &__content {
                 height: auto;
                 width: 100%;
-                margin-left: 0px;
-                padding: 20px;
+                margin: 0px;
+                padding: 10px;
                 justify-content: center;
+
+                @media only screen and (min-width: breakpoint(md)) {
+                    padding: 20px;
+                }
+
+                h3 {
+                    margin-top: 0;
+                }
+
             }
 
         }

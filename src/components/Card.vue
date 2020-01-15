@@ -15,9 +15,7 @@
       <div class="c-card__content">
         <h3>{{ data.name }}</h3>
         <i>Gender: {{ data.gender }}</i>
-        <div class="c-card__content__p">
-          <p>Birth year: {{ data.birth_year }}</p>
-        </div>
+        <p>Birth year: {{ data.birth_year }}</p>
       </div>
     </router-link>
   </div>

@@ -1,6 +1,8 @@
 .c-card {
     min-width: 300px;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 
     &__img {
         background-image: url('http://placekitten.com/g/500/200');
@@ -20,6 +22,7 @@
         flex-direction: column;
         margin-left: 10px;
         margin-right: -10px;
+        height: 100%;
 
         &__bg {
             height: 100%;
@@ -29,11 +32,13 @@
             padding-bottom: 10px;
         }
 
-        button {
+        a {
             align-self: flex-end;
             padding: 10px 20px;
             border: none;
             background-color: #ccc;
+            text-decoration: none;
+            color: black;
 
             &:hover {
                 background-color: black;
@@ -58,14 +63,16 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 75px;
+        height: 125px;
         background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: white;
 
-        h3 {
-            color: white;
+        p {
+            margin-top: 0;
         }
 
     }
@@ -73,11 +80,17 @@
 }
 
 .c-card--row {
-    display: flex;
-    flex-direction: column;
 
-    @media only screen and (min-width: breakpoint(sm)) {
-        flex-direction: row;
+    a {
+        text-decoration: none;
+        color: black;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            flex-direction: row;
+        }
     }
 
     .c-card {
@@ -97,6 +110,7 @@
             margin-left: 0;
             justify-content: center;
             margin-right: 0;
+            width: 100%;
 
             &__p {
                 display: block;

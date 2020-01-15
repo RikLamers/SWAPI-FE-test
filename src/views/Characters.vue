@@ -14,19 +14,15 @@
             </div>
           </div>
           <div class="row">
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
+            <Loader v-if="!characters.results" />
+            <div v-else v-for="(character, index) of displayedPosts" :key="character + index" class="col-12 col-lg-6 d-flex">
+              <Card type="row" :data="character" />
+            </div>
           </div>
         </section>
         <div class="row">
           <div class="col-12">
-            <Pagination type="arrow" />
+            <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (maxAmountOfPosts / this.characters.postsPerPage)" @requestNewData="newApiRequest" />
           </div>
         </div>
       </div>
@@ -36,10 +32,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import Card from '@/components/Card.vue'
 import Dropdown from '@/components/Dropdown.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
+import Loader from '@/components/Loader.vue'
 import Pagination from '@/components/Pagination.vue'
 import Title from '@/components/Title.vue'
 
@@ -50,6 +49,7 @@ export default {
     Dropdown,
     Footer,
     Header,
+    Loader,
     Pagination,
     Title
   },
@@ -58,14 +58,18 @@ export default {
       titleMargin: 'margin-bottom: 50px',
       genderFilters: {
         title: 'Filter',
-        filters: ['Male', 'Female', 'Robot']
+        filters: ['All', 'Male', 'Female', 'Robot']
       },
       viewFilters: {
         title: 'View',
         filters: ['Grid', 'List']
       },
       selectedGender: null,
-      selectedView: null
+      selectedView: null,
+      currentPage: 1,
+      maxAmountOfPosts: null,
+      startIndex: null,
+      endIndex: null
     }
   },
   methods: {
@@ -74,6 +78,32 @@ export default {
     },
     receivedView (view) {
       this.selectedView = view
+    },
+    newApiRequest (previousOrNext) {
+      if (previousOrNext === 'next') {
+        this.currentPage++
+      } else if (previousOrNext === 'previous') {
+        this.currentPage--
+      }
+    }
+  },
+  created () {
+    this.$store.dispatch('getCharacterData')
+  },
+  computed: {
+    ...mapState([
+      'characters'
+    ]),
+    displayedPosts () {
+      const filteredCharacterObj = this.$store.getters.filteredCharacters(this.selectedGender)
+      console.log(filteredCharacterObj)
+      const start = (this.currentPage - 1) * this.characters.postsPerPage
+      const end = start + this.characters.postsPerPage
+      if (filteredCharacterObj) {
+        return filteredCharacterObj.slice(start, end)
+      } else {
+        return []
+      }
     }
   }
 }

@@ -1,5 +1,15 @@
 .c-title {
 
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: #696969;
+        }
+
+    }
+
     h2 {
         text-align: center;
     }

@@ -1,0 +1,29 @@
+.v-detail {
+
+    &__center {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+
+        @media only screen and (min-width: breakpoint(md)) {
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__content {
+        margin-bottom: 50px;
+
+        @media only sreen and (min-width: breakpoint(md)) {
+            margin-bottom: 0;
+        }
+
+    }
+
+}

@@ -3,28 +3,29 @@
     <Header />
     <main class="container">
       <div class="v-home">
-        <section class="characters">
-          <Title title="Populair Starships" />
+        <section class="starships">
+          <Title title="Populair Starships" link="/starships" />
           <div class="row">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Loader v-if="!starships.results" />
+            <div v-else v-for="(starship, index) of sliceStarshipData" :key="starship + index" class="col-12 col-md-6 col-lg-4 d-flex">
+              <Card :data="starship" />
+            </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <Pagination />
+              <div class="v-home__viewmore">
+                <router-link to="/starships">View more</router-link>
+              </div>
             </div>
           </div>
         </section>
         <section class="planets">
-          <Title title="Populair Planets" />
+          <Title title="Populair Planets" link="/planets" />
           <div class="row">
-            <Card type="img-only" />
-            <Card type="img-only" />
-            <Card type="img-only" />
+            <Loader v-if="!planets.results" />
+            <div v-else class="col-12 col-md-6 col-lg-4" v-for="(planet, index) of slicePlanetData" :key="planet + index">
+              <Card type="img-only" :data="planet" />
+            </div>
           </div>
           <div class="row">
             <div class="col-12">
@@ -37,16 +38,18 @@
           </div>
         </section>
         <section class="characters">
-          <Title title="Populair Characters" />
+          <Title title="Populair Characters" link="/characters" />
           <div class="row">
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
-            <Card type="row" />
+            <Loader v-if="!characters.results" />
+            <div v-else v-for="(character, index) of sliceCharacterData" :key="character + index" class="col-12 col-lg-6 d-flex">
+              <Card type="row" :data="character" />
+            </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <Pagination />
+              <div class="v-home__viewmore">
+                <router-link to="/characters">View more</router-link>
+              </div>
             </div>
           </div>
         </section>
@@ -62,7 +65,7 @@ import { mapState } from 'vuex'
 import Card from '@/components/Card.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
-import Pagination from '@/components/Pagination.vue'
+import Loader from '@/components/Loader.vue'
 import Title from '@/components/Title.vue'
 
 export default {
@@ -71,16 +74,29 @@ export default {
     Card,
     Footer,
     Header,
-    Pagination,
+    Loader,
     Title
   },
   created () {
-    this.$store.dispatch('getAllData')
+    this.$store.dispatch('getCharacterData')
+    this.$store.dispatch('getPlanetData')
+    this.$store.dispatch('getStarshipData')
   },
   computed: {
     ...mapState([
-      'characters'
-    ])
+      'characters',
+      'planets',
+      'starships'
+    ]),
+    sliceCharacterData () {
+      return this.characters.results.slice(0, 4)
+    },
+    slicePlanetData () {
+      return this.planets.results.slice(0, 6)
+    },
+    sliceStarshipData () {
+      return this.starships.results.slice(0, 6)
+    }
   }
 }
 </script>

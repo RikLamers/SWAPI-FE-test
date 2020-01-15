@@ -22,7 +22,7 @@
         </section>
         <div class="row">
           <div class="col-12">
-            <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (maxAmountOfPosts / this.characters.postsPerPage)" @requestNewData="newApiRequest" />
+            <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (Math.ceil(maxAmountOfPosts / this.characters.postsPerPage))" @requestNewData="newApiRequest" />
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default {
       titleMargin: 'margin-bottom: 50px',
       genderFilters: {
         title: 'Filter',
-        filters: ['All', 'Male', 'Female', 'Robot']
+        filters: ['All', 'Male', 'Female', 'Hermaphrodite', 'Robot']
       },
       viewFilters: {
         title: 'View',
@@ -67,13 +67,13 @@ export default {
       selectedGender: null,
       selectedView: null,
       currentPage: 1,
-      maxAmountOfPosts: null,
       startIndex: null,
       endIndex: null
     }
   },
   methods: {
     receivedGender (gender) {
+      this.currentPage = 1
       this.selectedGender = gender
     },
     receivedView (view) {
@@ -104,6 +104,11 @@ export default {
       } else {
         return []
       }
+    },
+    maxAmountOfPosts () {
+      const filteredCharacterObj = this.$store.getters.filteredCharacters(this.selectedGender)
+      if (filteredCharacterObj) return filteredCharacterObj.length
+      return 0
     }
   }
 }

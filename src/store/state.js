@@ -1,3 +1,5 @@
 export default {
-  characters: []
+  characters: [],
+  planets: [],
+  starships: []
 }

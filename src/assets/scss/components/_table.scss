@@ -1,0 +1,26 @@
+.c-table {
+    width: 100%;
+
+    &__row {
+        display: flex;
+
+        &:nth-child(even) {
+            background-color: #DDDDDD;
+        }
+
+        &:hover {
+            background-color: lighten(#DDDDDD, 10%);
+        }
+
+    }
+
+    &__column {
+        max-width: 50%;
+        min-width: 125px;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+}

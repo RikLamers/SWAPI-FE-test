@@ -1,5 +1,6 @@
 export default {
   characters: [],
   planets: [],
-  starships: []
+  starships: [],
+  allData: []
 }

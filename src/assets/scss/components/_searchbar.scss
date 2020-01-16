@@ -41,4 +41,38 @@
 
     }
 
+    &__list {
+        border-radius: 0px 0px 3px 3px;
+        overflow: hidden;
+        background-color: white;
+        border: 1px solid #86868B;
+        margin-top: -2px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__item {
+        
+        a {
+            color: #86868B;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #86868B;
+                color: white;
+            }
+
+            span {
+                font-size: 10px;
+                align-self: center;
+            }
+        }
+
+    }
+
 }

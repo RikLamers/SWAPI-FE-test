@@ -44,7 +44,6 @@ export default {
   ],
   methods: {
     characterClasses () {
-      console.log(this.view === 'Grid')
       return {
         'c-card--row': this.type === 'row',
         'c-card__grid': this.view === 'Grid',

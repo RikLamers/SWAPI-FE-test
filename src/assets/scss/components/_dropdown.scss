@@ -10,8 +10,13 @@
     
     &__container {
         position: relative;
-        width: 150px;
+        width: 200px;
         outline: none;
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            width: 100%;
+        }
+
     }
 
     &__selected {

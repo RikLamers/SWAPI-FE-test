@@ -54,6 +54,14 @@ export default {
     const id = this.$route.params.id
     // get the data based on the id
     this.detailedData = this.$store.getters.getDetails(arrayToSearch, id)[0]
+    delete this.detailedData.id
+    delete this.detailedData.url
+    delete this.detailedData.category
+    delete this.detailedData.created
+    delete this.detailedData.edited
+    if (this.detailedData.homeworld) {
+      delete this.detailedData.homeworld
+    }
   }
 }
 </script>

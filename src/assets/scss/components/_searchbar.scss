@@ -26,6 +26,8 @@
         left: 5px;
         top: 50%;
         transform: translateY(-50%);
+        display: flex;
+        align-items: center;
 
         @media only screen and (min-width: breakpoint(sm)) {
             left: 10px;

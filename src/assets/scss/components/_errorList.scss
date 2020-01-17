@@ -1,0 +1,32 @@
+.c-errorlist {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+
+    &__error {
+        width: 100%;
+        padding: 20px;
+        background-color: red;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid darken(red, 10%);
+        border-bottom: 1px solid darken(red, 10%);
+
+        button {
+            margin-left: 20px;
+            background: none;
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+    }
+
+}

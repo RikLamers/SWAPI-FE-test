@@ -1,26 +1,26 @@
 .v-home {
 
-    ul {
+    .c-carousel__list {
         height: 20px;
         width: 100%;
         margin-top: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
 
-        li {
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            border: 1px solid black;
-            margin: 0 5px;
-            cursor: pointer;
+    // console.log - removeeeeee
+    .c-carousel__item {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin: 0 5px;
+        cursor: pointer;
 
-            &.is--active {
-                border: none;
-                background-color: black;
-            }
-
+        &.is--active {
+            border: none;
+            background-color: black;
         }
 
     }

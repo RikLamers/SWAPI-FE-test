@@ -9,7 +9,7 @@
             <div class="row">
               <div class="col-12 col-md-6">
                 <div class="v-detail__center">
-                  <img src="~@/assets/img/planets/planet-2.jpg" alt="Planeetje" />
+                  <img :src="detailedData.img" alt="Image of the subject" />
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -48,20 +48,12 @@ export default {
   created () {
     // split the path at /
     const splitLink = this.$route.path.split('/')
-    // get the array to search
+    // get the array to search (characters, planets, starships) out of the route
     const arrayToSearch = splitLink[1]
     // get the id to search in the array
     const id = this.$route.params.id
     // get the data based on the id
     this.detailedData = this.$store.getters.getDetails(arrayToSearch, id)[0]
-    delete this.detailedData.id
-    delete this.detailedData.url
-    delete this.detailedData.category
-    delete this.detailedData.created
-    delete this.detailedData.edited
-    if (this.detailedData.homeworld) {
-      delete this.detailedData.homeworld
-    }
   }
 }
 </script>

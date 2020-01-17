@@ -14,7 +14,7 @@
         </section>
         <div class="row">
           <div class="col-12">
-            <Pagination :paginationCount="starships.count" :itemNumbMin="((this.currentPage - 1) * this.starships.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * starships.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < starships.maxPages" @requestNewData="newApiRequest" />
+            <Pagination :paginationCount="starships.count" :itemNumbMin="((this.currentPage - 1) * this.starships.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * starships.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < starships.maxPages" @requestNewData="newPageRequest" />
           </div>
         </div>
       </div>
@@ -52,12 +52,14 @@ export default {
   },
   created () {
     // dispatch API call
-    this.$store.dispatch('getStarshipData')
+    if (!this.starships.results) {
+      this.$store.dispatch('getStarshipData')
+    }
   },
   computed: {
-    ...mapState({
-      starships: state => state.starships
-    }),
+    ...mapState([
+      'starships'
+    ]),
     displayedPosts () {
       // calculate start index of array of starships
       const start = (this.currentPage - 1) * this.starships.postsPerPage
@@ -73,7 +75,7 @@ export default {
     }
   },
   methods: {
-    newApiRequest (previousOrNext) {
+    newPageRequest (previousOrNext) {
       if (previousOrNext === 'next') {
         this.currentPage++
       } else if (previousOrNext === 'previous') {

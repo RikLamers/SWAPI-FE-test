@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
 // Responsive headings via: https://css-tricks.com/snippets/css/fluid-typography/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
 
 h1 {
     font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (1240 - 320)));

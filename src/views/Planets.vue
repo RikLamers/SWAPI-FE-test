@@ -14,7 +14,7 @@
         </section>
         <div class="row">
           <div class="col-12">
-            <Pagination :paginationCount="planets.count" :itemNumbMin="((this.currentPage - 1) * this.planets.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * planets.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < planets.maxPages" @requestNewData="newApiRequest" />
+            <Pagination :paginationCount="planets.count" :itemNumbMin="((this.currentPage - 1) * this.planets.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * planets.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < planets.maxPages" @requestNewData="newPageRequest" />
           </div>
         </div>
       </div>
@@ -52,7 +52,9 @@ export default {
   },
   created () {
     // dispatch API call
-    this.$store.dispatch('getPlanetData')
+    if (!this.planets.results) {
+      this.$store.dispatch('getPlanetData')
+    }
   },
   computed: {
     ...mapState([
@@ -69,7 +71,7 @@ export default {
     }
   },
   methods: {
-    newApiRequest (previousOrNext) {
+    newPageRequest (previousOrNext) {
       if (previousOrNext === 'next') {
         this.currentPage++
       } else if (previousOrNext === 'previous') {

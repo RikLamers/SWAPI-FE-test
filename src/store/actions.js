@@ -31,7 +31,6 @@ const modifyData = (results, category, amountOfImagesAvail) => {
 
 export default {
   async getCharacterData ({ commit, dispatch }) {
-    console.log('fnejfnejfnej')
     // Data structure object
     const characterData = {
       count: null,
@@ -58,7 +57,9 @@ export default {
         dispatch('getAllCharacterData', data.next)
       }
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching character data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
   },
 
@@ -78,7 +79,9 @@ export default {
       results = modifyData(results, 'characters', 4)
       commit('addAllCharacters', results)
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching character data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
   },
 
@@ -101,7 +104,9 @@ export default {
         dispatch('getAllPlanetData', data.next)
       }
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching planet data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
   },
 
@@ -118,7 +123,9 @@ export default {
       results = modifyData(results, 'planets', 3)
       commit('addAllPlanets', results)
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching planet data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
   },
 
@@ -141,7 +148,9 @@ export default {
         dispatch('getAllStarshipData', data.next)
       }
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching starship data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
   },
 
@@ -158,8 +167,14 @@ export default {
       results = modifyData(results, 'starships', 6)
       commit('addAllStarships', results)
     } catch (error) {
-      throw new Error(error)
+      const message = 'Something went wrong while fetching starship data, please reload the page to try again!'
+      const id = uuid()
+      commit('addErrorToArray', message, id, error)
     }
+  },
+
+  removeErrorMessage ({ commit }, id) {
+    commit('removeErrorFromArray', id)
   }
 
 }

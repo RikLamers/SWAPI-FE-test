@@ -2,7 +2,7 @@
   <div>
     <div class="c-searchbar">
       <button class="c-searchbar__btn">
-        <img src="~@/assets/img/icons/search.svg" alt="Search button icon" />
+        <Search fill="black" />
       </button>
       <input v-model="searchTerm" @keyup="searchAllArrays()" class="c-searchbar__input" type="search" placeholder="Enter a search term" />
     </div>
@@ -19,7 +19,12 @@
 <script>
 import { mapState } from 'vuex'
 
+import Search from '@/components/icons/Search.vue'
+
 export default {
+  components: {
+    Search
+  },
   data () {
     return {
       searchTerm: '',

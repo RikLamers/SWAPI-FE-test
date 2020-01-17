@@ -27,7 +27,7 @@
         <p>Model: {{ data.model }}</p>
         <p>Cargo capacity: {{ data.cargo_capacity }}</p>
         <router-link :to="`${data.category}/${data.id}`">
-          Read more <span>></span>
+          Read more <span><Arrow fill="black" /></span>
         </router-link>
       </div>
     </div>
@@ -35,13 +35,19 @@
 </template>
 
 <script>
+import Arrow from '@/components/icons/Arrow.vue'
+
 export default {
+  name: 'arrow',
   props: [
     'type',
     'data',
     'link',
     'view'
   ],
+  components: {
+    Arrow
+  },
   methods: {
     characterClasses () {
       return {

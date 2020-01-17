@@ -27,5 +27,20 @@ export default {
   addAllStarships (state, payload) {
     state.starships.results = [...state.starships.results, ...payload]
     state.allData = [...state.allData, ...payload]
+  },
+
+  addErrorToArray (state, message, id, error) {
+    const errorObj = {
+      message,
+      id,
+      originalError: error
+    }
+    state.errors = [...state.errors, errorObj]
+  },
+
+  removeErrorFromArray (state, id) {
+    state.errors = state.errors.filter(error => {
+      if (error.id !== id) return error
+    })
   }
 }

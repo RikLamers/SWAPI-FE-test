@@ -22,7 +22,7 @@
         </section>
         <div class="row">
           <div class="col-12">
-            <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (Math.ceil(maxAmountOfPosts / this.characters.postsPerPage))" @requestNewData="newApiRequest" />
+            <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (Math.ceil(maxAmountOfPosts / this.characters.postsPerPage))" @requestNewData="newPageRequest" />
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default {
     receivedView (view) {
       this.selectedView = view
     },
-    newApiRequest (previousOrNext) {
+    newPageRequest (previousOrNext) {
       if (previousOrNext === 'next') {
         this.currentPage++
       } else if (previousOrNext === 'previous') {
@@ -88,7 +88,10 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('getCharacterData')
+    // Dispatch API call
+    if (!this.characters.results) {
+      this.$store.dispatch('getCharacterData')
+    }
   },
   computed: {
     ...mapState([

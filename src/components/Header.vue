@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col-12 col-md-6 offset-md-3">
         <div class="c-header__subtitle">
-          <h5>Find your favorite Star Wars Characters, Films, species, Starships ans Planets!</h5>
+          <h5>Find your favorite Star Wars Characters, Films, species, Starships and Planets!</h5>
         </div>
       </div>
     </div>

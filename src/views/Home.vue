@@ -78,9 +78,9 @@ export default {
     Title
   },
   created () {
-    this.$store.dispatch('getCharacterData')
-    this.$store.dispatch('getPlanetData')
-    this.$store.dispatch('getStarshipData')
+    if (!this.characters.results) this.$store.dispatch('getCharacterData')
+    if (!this.planets.results) this.$store.dispatch('getPlanetData')
+    if (!this.starships.results) this.$store.dispatch('getStarshipData')
   },
   computed: {
     ...mapState([
@@ -92,7 +92,7 @@ export default {
       return this.characters.results.slice(0, 4)
     },
     slicePlanetData () {
-      return this.planets.results.slice(0, 6)
+      return this.planets.results.slice(0, 9)
     },
     sliceStarshipData () {
       return this.starships.results.slice(0, 6)

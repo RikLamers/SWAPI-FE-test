@@ -3,9 +3,3 @@
     <router-view/>
   </div>
 </template>
-
-<style>
-  #app {
-    font-family: helvetica;
-  }
-</style>

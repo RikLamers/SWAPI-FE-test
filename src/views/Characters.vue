@@ -25,6 +25,7 @@
             <Pagination :paginationCount="maxAmountOfPosts" :itemNumbMin="((this.currentPage - 1) * this.characters.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * characters.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < (Math.ceil(maxAmountOfPosts / this.characters.postsPerPage))" @requestNewData="newPageRequest" />
           </div>
         </div>
+        <ErrorList />
       </div>
     </main>
     <Footer />
@@ -36,6 +37,7 @@ import { mapState } from 'vuex'
 
 import Card from '@/components/Card.vue'
 import Dropdown from '@/components/Dropdown.vue'
+import ErrorList from '@/components/ErrorList.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Loader from '@/components/Loader.vue'
@@ -47,6 +49,7 @@ export default {
   components: {
     Card,
     Dropdown,
+    ErrorList,
     Footer,
     Header,
     Loader,

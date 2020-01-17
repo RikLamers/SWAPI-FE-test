@@ -17,6 +17,7 @@
             <Pagination :paginationCount="planets.count" :itemNumbMin="((this.currentPage - 1) * this.planets.postsPerPage) + 1" :itemNumbMax="((currentPage - 1) * planets.postsPerPage) + displayedPosts.length" :previousAvail="currentPage > 1" :nextAvail="currentPage < planets.maxPages" @requestNewData="newPageRequest" />
           </div>
         </div>
+        <ErrorList />
       </div>
     </main>
     <Footer />
@@ -27,6 +28,7 @@
 import { mapState } from 'vuex'
 
 import Card from '@/components/Card.vue'
+import ErrorList from '@/components/ErrorList.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Loader from '@/components/Loader.vue'
@@ -37,6 +39,7 @@ export default {
   name: 'Starships',
   components: {
     Card,
+    ErrorList,
     Footer,
     Header,
     Loader,

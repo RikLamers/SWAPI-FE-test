@@ -29,10 +29,10 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <ul>
-                <li></li>
-                <li class="is--active"></li>
-                <li></li>
+              <ul class="c-carousel__list">
+                <li class="c-carousel__item"></li>
+                <li class="c-carousel__item is--active"></li>
+                <li class="c-carousel__item"></li>
               </ul>
             </div>
           </div>
@@ -53,6 +53,7 @@
             </div>
           </div>
         </section>
+        <ErrorList />
       </div>
     </main>
     <Footer />
@@ -63,6 +64,7 @@
 import { mapState } from 'vuex'
 
 import Card from '@/components/Card.vue'
+import ErrorList from '@/components/ErrorList.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Loader from '@/components/Loader.vue'
@@ -72,6 +74,7 @@ export default {
   name: 'home',
   components: {
     Card,
+    ErrorList,
     Footer,
     Header,
     Loader,

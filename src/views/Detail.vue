@@ -20,6 +20,7 @@
             </div>
           </div>
         </section>
+        <ErrorList />
       </div>
     </main>
     <Footer />
@@ -27,6 +28,7 @@
 </template>
 
 <script>
+import ErrorList from '@/components/ErrorList.vue'
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Table from '@/components/Table.vue'
@@ -34,6 +36,7 @@ import Title from '@/components/Title.vue'
 
 export default {
   components: {
+    ErrorList,
     Footer,
     Header,
     Table,

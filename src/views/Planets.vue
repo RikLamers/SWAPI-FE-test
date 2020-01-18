@@ -36,7 +36,7 @@ import Pagination from '@/components/Pagination.vue'
 import Title from '@/components/Title.vue'
 
 export default {
-  name: 'Starships',
+  name: 'Planet',
   components: {
     Card,
     ErrorList,

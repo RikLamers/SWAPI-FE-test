@@ -35,6 +35,7 @@ import Table from '@/components/Table.vue'
 import Title from '@/components/Title.vue'
 
 export default {
+  name: 'Detail',
   components: {
     ErrorList,
     Footer,

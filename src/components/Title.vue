@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'Title',
   props: [
     'link',
     'title',

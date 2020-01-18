@@ -22,6 +22,7 @@ import { mapState } from 'vuex'
 import Search from '@/components/icons/Search.vue'
 
 export default {
+  name: 'Searchbar',
   components: {
     Search
   },

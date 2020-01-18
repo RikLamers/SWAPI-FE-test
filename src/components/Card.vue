@@ -38,7 +38,7 @@
 import Arrow from '@/components/icons/Arrow.vue'
 
 export default {
-  name: 'arrow',
+  name: 'Card',
   props: [
     'type',
     'data',

@@ -14,6 +14,7 @@
 import Arrow from '@/components/icons/Arrow.vue'
 
 export default {
+  name: 'Pagination',
   props: [
     'type',
     'paginationCount',

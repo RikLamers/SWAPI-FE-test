@@ -43,6 +43,7 @@
 import SearchBar from '@/components/SearchBar.vue'
 
 export default {
+  name: 'Header',
   components: {
     SearchBar
   }

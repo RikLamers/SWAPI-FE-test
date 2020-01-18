@@ -8,6 +8,14 @@
         width: 100%;
         z-index: 1;
         position: relative;
+        object-fit: cover;
+        min-height: 200px;
+        height: 100%;
+
+        @media only screen and (min-width: breakpoint(md)) {
+            height: 200px;
+        }
+
     }
 
     &__content {
@@ -68,6 +76,7 @@
             &__img {
                 height: auto;
                 width: 100%;
+                object-fit: cover;
 
                 @media only screen and (min-width: breakpoint(sm)) {
                     height: auto;
@@ -118,6 +127,7 @@
             &__img {
                 width: auto;
                 max-height: 175px;
+                object-fit: cover;
                 
                 @media only screen and (min-width: breakpoint(xs)) {
                     max-height: 200px;
@@ -158,6 +168,7 @@
     img {
         height: auto;
         width: 100%;
+        object-fit: cover;
     }
 
     .c-card__footer {

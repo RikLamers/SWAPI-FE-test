@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    // calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
     font-size: calc(30px + (40 - 30) * ((100vw - 320px) / (1240 - 320)));
 }
 

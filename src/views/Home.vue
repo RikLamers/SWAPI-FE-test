@@ -23,17 +23,35 @@
           <Title title="Populair Planets" link="/planets" />
           <div class="row">
             <Loader v-if="!planets.results" />
-            <div v-else class="col-12 col-md-6 col-lg-4" v-for="(planet, index) of slicePlanetData" :key="planet + index">
-              <Card type="img-only" :data="planet" />
-            </div>
-          </div>
-          <div class="row">
             <div class="col-12">
-              <ul class="c-carousel__list">
-                <li class="c-carousel__item"></li>
-                <li class="c-carousel__item is--active"></li>
-                <li class="c-carousel__item"></li>
-              </ul>
+              <div class="v-home__carousel">
+                <vueper-slides
+                  class="no-shadow"
+                  :arrows="false"
+                  :visible-slides="3"
+                  :touchable="false"
+                  :gap="3"
+                  :slideMultiple="3"
+                  :breakpoints="slideBreakpoints">
+                  <vueper-slide
+                    v-for="planet of slicePlanetData"
+                    :key="planet.id"
+                  >
+                    <template v-slot:content>
+                      <div class="c-card--img-only">
+                        <router-link :to="`${planet.category}/${planet.id}`">
+                          <img :src="planet.img" alt="Star Wars planet" />
+                          <div class="c-card__footer">
+                            <h3>{{ planet.name }}</h3>
+                            <p>Population: {{ planet.population }}</p>
+                            <p>Climate: {{ planet.climate }}</p>
+                          </div>
+                        </router-link>
+                      </div>
+                    </template>
+                  </vueper-slide>
+                </vueper-slides>
+              </div>
             </div>
           </div>
         </section>
@@ -62,6 +80,8 @@
 
 <script>
 import { mapState } from 'vuex'
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 
 import Card from '@/components/Card.vue'
 import ErrorList from '@/components/ErrorList.vue'
@@ -78,12 +98,57 @@ export default {
     Footer,
     Header,
     Loader,
-    Title
+    Title,
+    VueperSlides,
+    VueperSlide
+  },
+  data () {
+    return {
+      slides: [
+        {
+          title: 'slide #1',
+          content: 'slide content'
+        },
+        {
+          title: 'Slide #2',
+          content: 'content of the second slide'
+        }
+      ],
+      slideBreakpoints: {
+        992: {
+          visibleSlides: 2,
+          gap: 3,
+          slideMultiple: 2
+        },
+        768: {
+          visibleSlides: 1,
+          gap: 0,
+          slideMultiple: 1
+        }
+      }
+    }
   },
   created () {
     if (!this.characters.results) this.$store.dispatch('getCharacterData')
     if (!this.planets.results) this.$store.dispatch('getPlanetData')
     if (!this.starships.results) this.$store.dispatch('getStarshipData')
+  },
+  methods: {
+    planetCardHtml (category, id, img, name, population, climate) {
+      return `
+        <div class="c-card--img-only">
+          <img src="${img}" alt="Star Wars planet" />
+          <div class="c-card__footer">
+            <h3>${name}</h3>
+            <p>Population: ${population}</p>
+            <p>Climate: ${climate}</p>
+          </div>
+        </div>
+      `
+    },
+    handleRoute (id) {
+      this.$router.push({ name: 'planet detail', params: { id } })
+    }
   },
   computed: {
     ...mapState([
@@ -92,13 +157,16 @@ export default {
       'starships'
     ]),
     sliceCharacterData () {
-      return this.characters.results.slice(0, 4)
+      if (this.characters.results) return this.characters.results.slice(0, 4)
+      return []
     },
     slicePlanetData () {
-      return this.planets.results.slice(0, 9)
+      if (this.planets.results) return this.planets.results.slice(0, 9)
+      return []
     },
     sliceStarshipData () {
-      return this.starships.results.slice(0, 6)
+      if (this.starships.results) return this.starships.results.slice(0, 6)
+      return []
     }
   }
 }

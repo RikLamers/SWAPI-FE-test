@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '@/views/Home.vue'
-
 // Lazy load routes
 const Characters = () => import('@/views/Characters.vue')
 const Detail = () => import('@/views/Detail.vue')
+const Home = () => import('@/views/Home.vue')
 const Planets = () => import('@/views/Planets.vue')
 const Starships = () => import('@/views/Starships.vue')
 

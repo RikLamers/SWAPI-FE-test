@@ -27,7 +27,7 @@
         <p>Model: {{ data.model }}</p>
         <p>Cargo capacity: {{ data.cargo_capacity }}</p>
         <router-link :to="`${data.category}/${data.id}`">
-          Read more <span><Arrow fill="black" /></span>
+          Read more <span class="c-card__icon"><Arrow fill="white" /></span>
         </router-link>
       </div>
     </div>

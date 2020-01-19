@@ -38,7 +38,7 @@
                     :key="planet.id"
                   >
                     <template v-slot:content>
-                      <div class="c-card--img-only">
+                      <div class="c-card c-card--planet">
                         <router-link :to="`${planet.category}/${planet.id}`">
                           <img :src="planet.img" alt="Star Wars planet" />
                           <div class="c-card__footer">
@@ -60,7 +60,7 @@
           <div class="row">
             <Loader v-if="!characters.results" />
             <div v-else v-for="(character, index) of sliceCharacterData" :key="character + index" class="col-12 col-lg-6 d-flex">
-              <Card type="row" :data="character" />
+              <Card type="character" :data="character" />
             </div>
           </div>
           <div class="row">

@@ -8,7 +8,7 @@
           <div class="row">
             <Loader v-if="!planets.results" />
             <div v-else v-for="(planet, index) of displayedPosts" :key="planet + index" class="col-12 col-md-6 col-lg-4 d-flex">
-              <Card type="img-only" :data="planet" :link="planet.category" />
+              <Card type="planet" :data="planet" :link="planet.category" />
             </div>
           </div>
         </section>

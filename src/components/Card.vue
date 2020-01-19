@@ -1,5 +1,5 @@
 <template>
-  <div v-if="type === 'img-only'" class="c-card" :class="type === 'img-only' ? 'c-card--img-only' : null">
+  <div v-if="type === 'planet'" class="c-card c-card--planet">
     <router-link :to="`${data.category}/${data.id}`">
       <img :src="data.img" alt="Planet 1" />
       <div class="c-card__footer">
@@ -9,7 +9,7 @@
       </div>
     </router-link>
   </div>
-  <div v-else-if="type === 'row'" class="c-card" :class="characterClasses()">
+  <div v-else-if="type === 'character'" class="c-card c-card--character" :class="characterClasses()">
     <router-link :to="`${data.category}/${data.id}`">
       <img class="c-card__img" :src="data.img" alt="Star Wars character" />
       <div class="c-card__content">
@@ -19,7 +19,7 @@
       </div>
     </router-link>
   </div>
-  <div v-else class="c-card">
+  <div v-else class="c-card c-card--starship">
     <img class="c-card__img" :src="data.img" alt="Star Wars Starships" />
     <div class="c-card__content__bg">
       <div class="c-card__content">
@@ -51,9 +51,8 @@ export default {
   methods: {
     characterClasses () {
       return {
-        'c-card--row': this.type === 'row',
-        'c-card__grid': this.view === 'Grid',
-        'c-card__list': this.view === 'List'
+        '': this.view === 'Grid',
+        'c-card--character--list': this.view === 'List'
       }
     }
   }

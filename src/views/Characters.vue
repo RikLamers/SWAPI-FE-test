@@ -16,7 +16,7 @@
           <div class="row">
             <Loader v-if="!characters.results" />
             <div v-else v-for="(character, index) of displayedPosts" :key="character + index" :class="selectedView === 'Grid' ? 'col-12 col-lg-6 d-flex' : 'col-12'">
-              <Card :view="selectedView" type="row" :data="character" />
+              <Card :view="selectedView" type="character" :data="character" />
             </div>
           </div>
         </section>

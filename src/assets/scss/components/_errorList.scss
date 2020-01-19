@@ -8,19 +8,19 @@
     &__error {
         width: 100%;
         padding: 20px;
-        background-color: red;
-        color: white;
+        background-color: colors(error);
+        color: colors(white);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top: 1px solid darken(red, 10%);
-        border-bottom: 1px solid darken(red, 10%);
+        border-top: 1px solid darken(colors(error), 10%);
+        border-bottom: 1px solid darken(colors(error), 10%);
 
         button {
             margin-left: 20px;
             background: none;
             border: none;
-            color: white;
+            color: colors(white);
             display: flex;
             justify-content: center;
             align-items: center;

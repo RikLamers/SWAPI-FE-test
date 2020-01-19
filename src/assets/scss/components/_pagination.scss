@@ -16,24 +16,25 @@
 
     span {
         margin-right: 10px;
-        color: #DDDDDD;
+        color: lighten(colors(grey), 10%);
     }
     
     button {
         padding: 10px 15px;
-        border: 1px solid #DDDDDD;
+        border: 1px solid lighten(colors(grey), 10%);
         border-radius: 3px 0 0 3px;
         display: flex;
         align-items: center;
         justify-content: center;
         outline: none;
         cursor: pointer;
+        transition: all 200ms ease-in;
 
         &:disabled {
             cursor: not-allowed;
 
             &:hover {
-                background-color: white;
+                background-color: colors(white);
             }
 
         }

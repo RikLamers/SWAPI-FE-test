@@ -2,10 +2,11 @@
 
     a {
         text-decoration: none;
-        color: black;
+        color: colors(black);
+        transition: all 200ms ease-in;
 
         &:hover {
-            color: #696969;
+            color: lighten(colors(black), 25%);
         }
 
     }

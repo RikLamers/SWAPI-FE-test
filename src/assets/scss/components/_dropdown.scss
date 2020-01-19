@@ -21,14 +21,15 @@
 
     &__selected {
         border-radius: 3px;
-        border: 1px solid #86868B;
-        color: #86868B;
+        border: 1px solid darken(colors(grey), 10%);
+        color: darken(colors(grey), 10%);
         padding: 15px 30px;
         cursor: pointer;
         user-select: none;
+        transition: all 200ms ease-in;
 
         &:hover {
-            background-color: lighten(#86868B, 40%);
+            background-color: lighten(colors(grey), 15%);
         }
 
         &:after {
@@ -38,11 +39,11 @@
             right: 25px;
             transform: translateY(-50%);
             border: 4px solid transparent;
-            border-color: #86868B transparent transparent transparent;
+            border-color: darken(colors(grey), 10%) transparent transparent transparent;
         }
 
         &.open {
-            background-color: lighten(#86868B, 40%);
+            background-color: lighten(colors(grey), 15%);
             border-radius: 3px 3px 0px 0px;
         }
 
@@ -51,10 +52,10 @@
     &__list {
         border-radius: 0px 0px 3px 3px;
         overflow: hidden;
-        background-color: white;
-        border-right: 1px solid #86868B;
-        border-left: 1px solid #86868B;
-        border-bottom: 1px solid #86868B;
+        background-color: colors(white);
+        border-right: 1px solid darken(colors(grey), 10%);
+        border-left: 1px solid darken(colors(grey), 10%);
+        border-bottom: 1px solid darken(colors(grey), 10%);
         position: absolute;
         left: 0;
         right: 0;
@@ -67,14 +68,14 @@
     }
 
     &__item {
-        color: #86868B;
+        color: darken(colors(grey), 10%);
         padding: 10px;
         cursor: pointer;
         user-select: none;
 
         &:hover {
-            background-color: #86868B;
-            color: white;
+            background-color: darken(colors(grey), 10%);
+            color: colors(white);
         }
 
     }

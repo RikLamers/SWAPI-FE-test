@@ -14,8 +14,8 @@
             width: 100%;
             text-transform: uppercase;
             text-decoration: none;
-            color: white;
-            background-color: black;
+            color: colors(white);
+            background-color: colors(black);
             text-align: center;
             cursor: pointer;
             font-weight: bold;
@@ -23,7 +23,7 @@
 
             &:hover {
                 background-color: colors(yellow);
-                color: black;
+                color: colors(black);
             }
 
             @media only screen and (min-width: breakpoint(xs)) {
@@ -35,6 +35,10 @@
             }
 
         }
+    }
+
+    .c-card--planet {
+        margin-top: 0;
     }
 
     &__carousel {

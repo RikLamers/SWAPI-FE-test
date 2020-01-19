@@ -9,7 +9,7 @@
         padding: 10px 30px 10px 50px;
         border: none;
         border-radius: 3px;
-        color: #6D6C7C;
+        color: colors(text-color);
         outline: none;
         border: 1px solid colors(black);
 
@@ -52,7 +52,7 @@
     &__list {
         border-radius: 0px 0px 3px 3px;
         overflow: hidden;
-        background-color: white;
+        background-color: colors(white);
         border: 1px solid colors(yellow);
         margin-top: -2px;
         position: relative;
@@ -62,7 +62,7 @@
     &__item {
         
         a {
-            color: #86868B;
+            color: darken(colors(grey), 10%);
             padding: 10px;
             cursor: pointer;
             user-select: none;
@@ -72,7 +72,7 @@
 
             &:hover {
                 background-color: colors(yellow);
-                color: black;
+                color: colors(black);
             }
 
             span {

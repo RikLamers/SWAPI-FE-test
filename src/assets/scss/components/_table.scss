@@ -3,13 +3,14 @@
 
     &__row {
         display: flex;
+        border-radius: 3px;
 
         &:nth-child(even) {
-            background-color: #DDDDDD;
+            background-color: colors(grey);
         }
 
         &:hover {
-            background-color: lighten(#DDDDDD, 10%);
+            background-color: lighten(colors(grey), 10%);
         }
 
     }

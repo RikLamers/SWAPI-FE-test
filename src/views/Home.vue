@@ -4,7 +4,7 @@
     <main class="container">
       <div class="v-home">
         <section class="starships">
-          <Title title="Populair Starships" link="/starships" />
+          <Title title="Popular Starships" link="/starships" />
           <div class="row">
             <Loader v-if="!starships.results" />
             <div v-else v-for="(starship, index) of sliceStarshipData" :key="starship + index" class="col-12 col-md-6 col-lg-4 d-flex">
@@ -20,7 +20,7 @@
           </div>
         </section>
         <section class="planets">
-          <Title title="Populair Planets" link="/planets" />
+          <Title title="Popular Planets" link="/planets" />
           <div class="row">
             <Loader v-if="!planets.results" />
             <div class="col-12">
@@ -56,7 +56,7 @@
           </div>
         </section>
         <section class="characters">
-          <Title title="Populair Characters" link="/characters" />
+          <Title title="Popular Characters" link="/characters" />
           <div class="row">
             <Loader v-if="!characters.results" />
             <div v-else v-for="(character, index) of sliceCharacterData" :key="character + index" class="col-12 col-lg-6 d-flex">
@@ -132,23 +132,6 @@ export default {
     if (!this.characters.results) this.$store.dispatch('getCharacterData')
     if (!this.planets.results) this.$store.dispatch('getPlanetData')
     if (!this.starships.results) this.$store.dispatch('getStarshipData')
-  },
-  methods: {
-    planetCardHtml (category, id, img, name, population, climate) {
-      return `
-        <div class="c-card--img-only">
-          <img src="${img}" alt="Star Wars planet" />
-          <div class="c-card__footer">
-            <h3>${name}</h3>
-            <p>Population: ${population}</p>
-            <p>Climate: ${climate}</p>
-          </div>
-        </div>
-      `
-    },
-    handleRoute (id) {
-      this.$router.push({ name: 'planet detail', params: { id } })
-    }
   },
   computed: {
     ...mapState([

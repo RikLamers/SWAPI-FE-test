@@ -10,17 +10,20 @@
             padding: 10px 0;
             background: transparent;
             border-radius: 3px;
-            border: 1px solid black;
             min-width: 250px;
             width: 100%;
             text-transform: uppercase;
             text-decoration: none;
-            color: black;
+            color: white;
+            background-color: black;
             text-align: center;
             cursor: pointer;
+            font-weight: bold;
+            transition: all 200ms ease-in;
 
             &:hover {
-                background-color: lighten(#DDDDDD, 10%);
+                background-color: colors(yellow);
+                color: black;
             }
 
             @media only screen and (min-width: breakpoint(xs)) {

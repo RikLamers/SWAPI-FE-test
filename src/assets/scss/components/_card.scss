@@ -3,6 +3,22 @@
     display: flex;
     flex-direction: column;
 
+    a {
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+
+        }
+        
+    }
+
+    img {
+        transition: transform 200ms ease-in;
+    }
+
     &__content {
         background-color: lighten(colors(grey), 10%);
         padding: 20px;
@@ -10,6 +26,7 @@
         flex-direction: column;
         height: 100%;
         overflow: hidden;
+        z-index: 1;
 
         // Button + icon styling
         a {

@@ -1,6 +1,7 @@
 // Character card
 .c-card--character {
     margin-top: 50px;
+    overflow: hidden;
 
     a {
         text-decoration: none;
@@ -12,6 +13,7 @@
         @media only screen and (min-width: breakpoint(sm)) {
             flex-direction: row;
         }
+
     }
 
     img {
@@ -97,6 +99,7 @@
 
                 h3 {
                     margin-top: 0;
+                    word-wrap: break-word;
                 }
 
             }

@@ -20,7 +20,9 @@
     </router-link>
   </div>
   <div v-else class="c-card c-card--starship">
-    <img class="c-card__img" :src="data.img" alt="Star Wars Starships" />
+    <div class="c-card__img-container">
+      <img class="c-card__img" :src="data.img" alt="Star Wars Starships" />
+    </div>
     <div class="c-card__content__bg">
       <div class="c-card__content">
         <h3>{{ data.name }}</h3>

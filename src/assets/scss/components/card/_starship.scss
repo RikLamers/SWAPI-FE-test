@@ -3,34 +3,48 @@
     min-width: 300px;
     margin: 50px 5px 0;
 
+    &:hover {
+
+        img {
+            transform: scale(1.1);
+        }
+        
+    }
+
     .c-card {
 
-        &__img {
+        &__img-container {
             width: 100%;
             z-index: 1;
             position: relative;
-            object-fit: cover;
             border-radius: 3px 3px 0px 0px;
-            height: 250px;
+            min-height: 250px;
+            overflow: hidden;
     
             @media only screen and (min-width: breakpoint(xs)) {
-                height: 300px;
+                min-height: 300px;
             }
     
             @media only screen and (min-width: breakpoint(sm)) {
-                height: 350px;
+                min-height: 350px;
             }
     
             @media only screen and (min-width: breakpoint(md)) {
-                height: 230px;
+                min-height: 230px;
             }
     
             @media only screen and (min-width: breakpoint(lg)) {
-                height: 200px;
+                min-height: 200px;
             }
     
             @media only screen and (min-width: breakpoint(xl)) {
-                height: 250px;
+                min-height: 250px;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
     
         }
@@ -47,6 +61,7 @@
                 position: relative;
                 padding-bottom: 10px;
                 border-radius: 0px 0px 3px 3px;
+                z-index: 1;
             }
     
         }

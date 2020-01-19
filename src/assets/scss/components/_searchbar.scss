@@ -10,6 +10,12 @@
         border: none;
         border-radius: 3px;
         color: #6D6C7C;
+        outline: none;
+        border: 1px solid colors(black);
+
+        &:focus {
+            border-color: colors(yellow);
+        }
 
         @media only screen and (min-width: breakpoint(sm)) {
             padding: 10px 30px 10px 50px;
@@ -47,7 +53,7 @@
         border-radius: 0px 0px 3px 3px;
         overflow: hidden;
         background-color: white;
-        border: 1px solid #86868B;
+        border: 1px solid colors(yellow);
         margin-top: -2px;
         position: relative;
         z-index: 2;
@@ -65,8 +71,8 @@
             text-decoration: none;
 
             &:hover {
-                background-color: #86868B;
-                color: white;
+                background-color: colors(yellow);
+                color: black;
             }
 
             span {

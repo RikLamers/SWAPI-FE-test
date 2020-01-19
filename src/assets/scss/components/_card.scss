@@ -1,3 +1,4 @@
+// Starships
 .c-card {
     min-width: 300px;
     margin-top: 50px;
@@ -9,46 +10,105 @@
         z-index: 1;
         position: relative;
         object-fit: cover;
-        min-height: 200px;
-        height: 100%;
+        border-radius: 3px 3px 0px 0px;
+        height: 250px;
+
+        @media only screen and (min-width: breakpoint(xs)) {
+            height: 300px;
+        }
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            height: 350px;
+        }
 
         @media only screen and (min-width: breakpoint(md)) {
+            height: 230px;
+        }
+
+        @media only screen and (min-width: breakpoint(lg)) {
             height: 200px;
+        }
+
+        @media only screen and (min-width: breakpoint(xl)) {
+            height: 250px;
         }
 
     }
 
     &__content {
         background-color: #efefef;
-        padding: 10px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         margin-left: 10px;
         margin-right: -10px;
         height: 100%;
+        border-radius: 0px 3px 3px 0px;
 
         &__bg {
             height: 100%;
             width: 100%;
-            background-color: #ccc;
+            background-color: lighten(colors(yellow), 20%);
             position: relative;
             padding-bottom: 10px;
+            border-radius: 0px 0px 3px 3px;
         }
 
         a {
             align-self: flex-end;
+            margin-top: auto;
             padding: 10px 20px;
             border: none;
-            background-color: #ccc;
+            background-color: black;
             text-decoration: none;
-            color: black;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 200ms ease-in;
+
+            .c-card__icon {
+                margin-left: 10px;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 1px;
+                    top: 50%;
+                    transform: translateY(-0.75px);
+                    background-color: white;
+                }
+
+                svg {
+                    position: relative;
+                    left: 0;
+                    transition: all 200ms ease-in;
+                }
+
+            }
 
             &:hover {
-                background-color: black;
-                color: white;
+                background-color: colors(yellow);
+                color: black;
+
+                .c-card__icon {
+                    transform: translateX(10px);
+
+                    &:before {
+                        background-color: black;
+                    }
+
+                }
+
+                svg {
+                    left: 5px;
+                }
 
                 g {
-                    fill: white;
+                    fill: black;
                 }
 
             }
@@ -57,6 +117,7 @@
 
     }
 
+    // characters
     &.c-card__grid, &.c-card--row {
 
         a {
@@ -74,13 +135,26 @@
         .c-card {
 
             &__img {
-                height: auto;
+                height: 250px;
                 width: 100%;
                 object-fit: cover;
+                border-radius: 3px 0px 0px 3px;
 
+                @media only screen and (min-width: breakpoint(xs)) {
+                    height: 400px;
+                }
+        
                 @media only screen and (min-width: breakpoint(sm)) {
-                    height: auto;
+                    height: 300px;
                     width: 60%;
+                }
+        
+                @media only screen and (min-width: breakpoint(md)) {
+                    height: 400px;
+                }
+        
+                @media only screen and (min-width: breakpoint(lg)) {
+                    height: 300px;
                 }
 
             }
@@ -126,15 +200,18 @@
 
             &__img {
                 width: auto;
-                max-height: 175px;
                 object-fit: cover;
-                
-                @media only screen and (min-width: breakpoint(xs)) {
-                    max-height: 200px;
+                max-height: 200px;
+                max-width: 200px;
+
+                @media only screen and (min-width: breakpoint(sm)) {
+                    max-height: 250px;
+                    max-width: 250px;
                 }
 
                 @media only screen and (min-width: breakpoint(md)) {
                     max-height: 250px;
+                    max-width: 250px;
                 }
 
             }
@@ -162,26 +239,35 @@
 
 }
 
+// Planet card
 .c-card--img-only {
     position: relative;
 
     img {
         height: auto;
         width: 100%;
-        object-fit: cover;
+        // object-fit: cover;
+        border-radius: 3px 3px 0px 0px;
     }
 
     .c-card__footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 125px;
+        height: 150px;
         background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: white;
+        border-radius: 0px 0px 3px 3px;
+        padding: 20px;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
 
         p {
             margin-top: 0;

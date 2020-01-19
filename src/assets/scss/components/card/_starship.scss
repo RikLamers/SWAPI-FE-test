@@ -1,0 +1,56 @@
+// Starship card
+.c-card--starship {
+    min-width: 300px;
+    margin: 50px 5px 0;
+
+    .c-card {
+
+        &__img {
+            width: 100%;
+            z-index: 1;
+            position: relative;
+            object-fit: cover;
+            border-radius: 3px 3px 0px 0px;
+            height: 250px;
+    
+            @media only screen and (min-width: breakpoint(xs)) {
+                height: 300px;
+            }
+    
+            @media only screen and (min-width: breakpoint(sm)) {
+                height: 350px;
+            }
+    
+            @media only screen and (min-width: breakpoint(md)) {
+                height: 230px;
+            }
+    
+            @media only screen and (min-width: breakpoint(lg)) {
+                height: 200px;
+            }
+    
+            @media only screen and (min-width: breakpoint(xl)) {
+                height: 250px;
+            }
+    
+        }
+
+        &__content {
+            margin-left: 10px;
+            margin-right: -10px;
+            border-radius: 0px 3px 3px 3px;
+    
+            &__bg {
+                height: 100%;
+                width: 100%;
+                background-color: lighten(colors(yellow), 20%);
+                position: relative;
+                padding-bottom: 10px;
+                border-radius: 0px 0px 3px 3px;
+            }
+    
+        }
+
+    }
+
+}

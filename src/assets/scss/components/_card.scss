@@ -1,67 +1,25 @@
-// Starships
+// general styling
 .c-card {
-    min-width: 300px;
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
 
-    &__img {
-        width: 100%;
-        z-index: 1;
-        position: relative;
-        object-fit: cover;
-        border-radius: 3px 3px 0px 0px;
-        height: 250px;
-
-        @media only screen and (min-width: breakpoint(xs)) {
-            height: 300px;
-        }
-
-        @media only screen and (min-width: breakpoint(sm)) {
-            height: 350px;
-        }
-
-        @media only screen and (min-width: breakpoint(md)) {
-            height: 230px;
-        }
-
-        @media only screen and (min-width: breakpoint(lg)) {
-            height: 200px;
-        }
-
-        @media only screen and (min-width: breakpoint(xl)) {
-            height: 250px;
-        }
-
-    }
-
     &__content {
-        background-color: #efefef;
+        background-color: lighten(colors(grey), 10%);
         padding: 20px;
         display: flex;
         flex-direction: column;
-        margin-left: 10px;
-        margin-right: -10px;
         height: 100%;
-        border-radius: 0px 3px 3px 0px;
+        overflow: hidden;
 
-        &__bg {
-            height: 100%;
-            width: 100%;
-            background-color: lighten(colors(yellow), 20%);
-            position: relative;
-            padding-bottom: 10px;
-            border-radius: 0px 0px 3px 3px;
-        }
-
+        // Button + icon styling
         a {
             align-self: flex-end;
             margin-top: auto;
             padding: 10px 20px;
             border: none;
-            background-color: black;
+            background-color: colors(black);
             text-decoration: none;
-            color: white;
+            color: colors(white);
             text-transform: uppercase;
             border-radius: 3px;
             font-size: 12px;
@@ -78,8 +36,8 @@
                     width: 10px;
                     height: 1px;
                     top: 50%;
-                    transform: translateY(-0.75px);
-                    background-color: white;
+                    transform: translateY(-1.75px);
+                    background-color: colors(white);
                 }
 
                 svg {
@@ -92,13 +50,13 @@
 
             &:hover {
                 background-color: colors(yellow);
-                color: black;
+                color: colors(black);
 
                 .c-card__icon {
                     transform: translateX(10px);
 
                     &:before {
-                        background-color: black;
+                        background-color: colors(black);
                     }
 
                 }
@@ -108,7 +66,7 @@
                 }
 
                 g {
-                    fill: black;
+                    fill: colors(black);
                 }
 
             }
@@ -117,140 +75,7 @@
 
     }
 
-    // characters
-    &.c-card__grid, &.c-card--row {
-
-        a {
-            text-decoration: none;
-            color: black;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-
-            @media only screen and (min-width: breakpoint(sm)) {
-                flex-direction: row;
-            }
-        }
-
-        .c-card {
-
-            &__img {
-                height: 250px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 3px 0px 0px 3px;
-
-                @media only screen and (min-width: breakpoint(xs)) {
-                    height: 400px;
-                }
-        
-                @media only screen and (min-width: breakpoint(sm)) {
-                    height: 300px;
-                    width: 60%;
-                }
-        
-                @media only screen and (min-width: breakpoint(md)) {
-                    height: 400px;
-                }
-        
-                @media only screen and (min-width: breakpoint(lg)) {
-                    height: 300px;
-                }
-
-            }
-
-            &__content {
-                margin-left: 0;
-                justify-content: center;
-                margin-right: 0;
-                width: 100%;
-
-                &__p {
-                    display: block;
-                    margin: 16px 0;
-
-                    p {
-                        display: inline;
-                    }
-
-
-                    span {
-                        margin-left: 5px;
-                    }
-
-                }
-
-            }
-
-        }
-
-    }
-
-    &.c-card__list {
-        
-        a {
-            display: flex;
-            flex-direction: row;
-            text-decoration: none;
-            color: black;
-        }
-
-        .c-card {
-            margin-top: 0;
-
-            &__img {
-                width: auto;
-                object-fit: cover;
-                max-height: 200px;
-                max-width: 200px;
-
-                @media only screen and (min-width: breakpoint(sm)) {
-                    max-height: 250px;
-                    max-width: 250px;
-                }
-
-                @media only screen and (min-width: breakpoint(md)) {
-                    max-height: 250px;
-                    max-width: 250px;
-                }
-
-            }
-
-            &__content {
-                height: auto;
-                width: 100%;
-                margin: 0px;
-                padding: 10px;
-                justify-content: center;
-
-                @media only screen and (min-width: breakpoint(md)) {
-                    padding: 20px;
-                }
-
-                h3 {
-                    margin-top: 0;
-                }
-
-            }
-
-        }
-
-    }
-
-}
-
-// Planet card
-.c-card--img-only {
-    position: relative;
-
-    img {
-        height: auto;
-        width: 100%;
-        // object-fit: cover;
-        border-radius: 3px 3px 0px 0px;
-    }
-
-    .c-card__footer {
+    &__footer {
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -260,8 +85,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: white;
-        border-radius: 0px 0px 3px 3px;
+        color: colors(white);
         padding: 20px;
 
         h3 {
@@ -276,3 +100,7 @@
     }
 
 }
+
+@import './card/character';
+@import './card/starship';
+@import './card/planet';

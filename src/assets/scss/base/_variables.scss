@@ -7,5 +7,16 @@ $bp: (
 );
 
 @function breakpoint($break-level) {
-	@return map-get($bp, $break-level)
+	@return map-get($bp, $break-level);
+}
+
+$colorsArray: (
+	grey: #ccc,
+	black: #000,
+	text-color: #333333,
+	yellow: #FFE81F
+);
+
+@function colors($color) {
+	@return map-get($colorsArray, $color);
 }

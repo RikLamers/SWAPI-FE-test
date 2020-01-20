@@ -7,12 +7,17 @@
           <Title :title="detailedData.name" :margin="titleMargin" />
           <div class="v-detail__content">
             <div class="row">
-              <div class="col-12 col-md-6">
-                <div class="v-detail__center">
-                  <img :src="detailedData.img" alt="Image of the subject" />
+              <div class="col-12 col-lg-6">
+                <div class="v-detail__img">
+                  <div class="v-detail__label">
+                    <img src="@/assets/img/logo-black.png" alt="Star Wars logo" />
+                  </div>
+                  <div class="v-detail__container">
+                    <img :src="detailedData.img" alt="Image of the subject" />
+                  </div>
                 </div>
               </div>
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-lg-6">
                 <div class="v-detail__center">
                   <Table :data="detailedData" />
                 </div>

@@ -23,26 +23,26 @@ export default {
 
 <style>
 .fade-enter-active {
-  animation: coming 1s;
+  animation: fadeIn 1s;
   animation-delay: .75s;
   opacity: 0;
 }
 .fade-leave-active {
-  animation: going 1s;
+  animation: fadeOut 1s;
 }
 
-@keyframes going {
+@keyframes fadeOut {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50px);
+    transform: translateX(50px);
     opacity: 0;
   }
 }
-@keyframes coming {
+@keyframes fadeIn {
   from {
-    transform: translateX(-50px);
+    transform: translateX(50px);
     opacity: 0;
   }
   to {

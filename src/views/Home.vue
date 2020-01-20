@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <main class="container">
       <div class="v-home">
         <section class="starships">
@@ -74,7 +73,6 @@
         <ErrorList />
       </div>
     </main>
-    <Footer />
   </div>
 </template>
 
@@ -85,8 +83,6 @@ import 'vueperslides/dist/vueperslides.css'
 
 import Card from '@/components/Card.vue'
 import ErrorList from '@/components/ErrorList.vue'
-import Footer from '@/components/Footer.vue'
-import Header from '@/components/Header.vue'
 import Loader from '@/components/Loader.vue'
 import Title from '@/components/Title.vue'
 
@@ -95,8 +91,6 @@ export default {
   components: {
     Card,
     ErrorList,
-    Footer,
-    Header,
     Loader,
     Title,
     VueperSlides,

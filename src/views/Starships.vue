@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <main class="container">
       <div class="v-starships">
         <section class="starships">
@@ -20,7 +19,6 @@
         <ErrorList />
       </div>
     </main>
-    <Footer />
   </div>
 </template>
 
@@ -29,8 +27,6 @@ import { mapState } from 'vuex'
 
 import Card from '@/components/Card.vue'
 import ErrorList from '@/components/ErrorList.vue'
-import Footer from '@/components/Footer.vue'
-import Header from '@/components/Header.vue'
 import Loader from '@/components/Loader.vue'
 import Pagination from '@/components/Pagination.vue'
 import Title from '@/components/Title.vue'
@@ -40,8 +36,6 @@ export default {
   components: {
     Card,
     ErrorList,
-    Footer,
-    Header,
     Loader,
     Pagination,
     Title

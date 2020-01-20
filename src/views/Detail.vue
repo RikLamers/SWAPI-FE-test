@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <main class="container">
       <div class="v-detail">
         <section class="detail">
@@ -28,14 +27,11 @@
         <ErrorList />
       </div>
     </main>
-    <Footer />
   </div>
 </template>
 
 <script>
 import ErrorList from '@/components/ErrorList.vue'
-import Footer from '@/components/Footer.vue'
-import Header from '@/components/Header.vue'
 import Table from '@/components/Table.vue'
 import Title from '@/components/Title.vue'
 
@@ -43,8 +39,6 @@ export default {
   name: 'Detail',
   components: {
     ErrorList,
-    Footer,
-    Header,
     Table,
     Title
   },

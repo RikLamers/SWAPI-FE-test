@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="container-fluid c-header">
-      <div class="c-header__menubtn" @mouseenter="isHovering = true" @mouseleave="isHovering = false" @click="showMenu" :class="{ active: show }">
+      <div class="c-header__menubtn" @mouseenter="isHovering = true" @mouseleave="isHovering = false" @click="toggleMenu" :class="{ active: show }">
         <div class="c-header__menubtn--inner" :class="{ active: show, hovering: isHovering }"></div>
       </div>
       <div class="c-header__home">
@@ -41,7 +41,7 @@
         </div>
       </div>
     </header>
-    <Menu :show="show" :hovering="isHovering" ref="navigationMenu" />
+    <Menu :show="show" :hovering="isHovering" ref="navigationMenu" @toggleShow="closeMenu" />
   </div>
 </template>
 
@@ -63,12 +63,16 @@ export default {
     }
   },
   methods: {
-    showMenu () {
+    toggleMenu () {
       this.show = !this.show
       if (this.show) {
         this.$refs.navigationMenu.animateMenu(this.animHasRun)
         this.animHasRun = true
       }
+    },
+
+    closeMenu () {
+      this.show = false
     }
   }
 }

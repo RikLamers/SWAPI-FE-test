@@ -5,27 +5,27 @@
     </div>
     <div class="c-menu__bg--overlay"></div>
     <div class="c-menu__list">
-      <ul ref="menu" :class="{ visible: menuVisible }" class="c-menu__items">
+      <ul ref="menu" class="c-menu__items">
         <router-link to="/" exact>
-          <li @mouseenter="mouseMovement('home')" class="c-menu__item">
+          <li @mouseenter="mouseMovement('home')" @click="menuItemClicked" class="c-menu__item">
             <h1>Home</h1>
             <div class="c-menu__bar"></div>
           </li>
         </router-link>
         <router-link to="/characters">
-          <li @mouseenter="mouseMovement('characters')" class="c-menu__item">
+          <li @mouseenter="mouseMovement('characters')" @click="menuItemClicked" class="c-menu__item">
             <h1>Characters</h1>
             <div class="c-menu__bar"></div>
           </li>
         </router-link>
         <router-link to="/planets">
-          <li @mouseenter="mouseMovement('planets')" class="c-menu__item">
+          <li @mouseenter="mouseMovement('planets')" @click="menuItemClicked" class="c-menu__item">
             <h1>Planets</h1>
             <div class="c-menu__bar"></div>
           </li>
         </router-link>
         <router-link to="/starships">
-          <li @mouseenter="mouseMovement('starships')" class="c-menu__item">
+          <li @mouseenter="mouseMovement('starships')" @click="menuItemClicked" class="c-menu__item">
             <h1>Starships</h1>
             <div class="c-menu__bar"></div>
           </li>
@@ -49,7 +49,6 @@ export default {
       transformOffset: {
         transform: null
       },
-      menuVisible: false,
       hoveredItem: 'home',
       imgUrls: {
         home: require('../assets/img/logo.png'),
@@ -108,6 +107,10 @@ export default {
 
     mouseMovement (item) {
       this.hoveredItem = item
+    },
+
+    menuItemClicked () {
+      this.$emit('toggleShow')
     }
   }
 }

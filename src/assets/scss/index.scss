@@ -1,0 +1,22 @@
+// Base
+@import './base/variables';
+@import './base/base';
+
+// Views
+@import './views/characters';
+@import './views/detail';
+@import './views/home';
+@import './views/starships';
+
+// Components
+@import './components/card';
+@import './components/dropdown';
+@import './components/errorList';
+@import './components/footer';
+@import './components/header';
+@import './components/loader';
+@import './components/menu';
+@import './components/pagination';
+@import './components/searchbar';
+@import './components/table';
+@import './components/title';

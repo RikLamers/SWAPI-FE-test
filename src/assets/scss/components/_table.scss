@@ -1,0 +1,27 @@
+.c-table {
+    width: 100%;
+
+    &__row {
+        display: flex;
+        border-radius: 3px;
+
+        &:nth-child(even) {
+            background-color: colors(grey);
+        }
+
+        &:hover {
+            background-color: lighten(colors(grey), 10%);
+        }
+
+    }
+
+    &__column {
+        max-width: 50%;
+        min-width: 125px;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+}

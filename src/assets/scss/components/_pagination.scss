@@ -1,0 +1,52 @@
+.c-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+
+    .c-pagination {
+
+        svg {
+            height: 15px;
+            width: auto;
+            margin-top: 4px;
+        }
+
+    }
+
+    span {
+        margin-right: 10px;
+        color: lighten(colors(grey), 10%);
+    }
+    
+    button {
+        padding: 10px 15px;
+        border: 1px solid lighten(colors(grey), 10%);
+        border-radius: 3px 0 0 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        cursor: pointer;
+        transition: all 200ms ease-in;
+
+        &:disabled {
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: colors(white);
+            }
+
+        }
+
+        &:hover {
+            background-color: lighten(#DDDDDD, 10%);
+        }
+
+        &:nth-child(odd) {
+            border-radius: 0 3px 3px 0;
+        }
+
+    }
+
+}

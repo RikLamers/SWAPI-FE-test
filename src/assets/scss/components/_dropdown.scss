@@ -1,0 +1,83 @@
+.c-dropdown {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+    label {
+        margin-right: 10px;
+        text-transform: uppercase;
+    }
+    
+    &__container {
+        position: relative;
+        width: 200px;
+        outline: none;
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            width: 100%;
+        }
+
+    }
+
+    &__selected {
+        border-radius: 3px;
+        border: 1px solid darken(colors(grey), 10%);
+        color: darken(colors(grey), 10%);
+        padding: 15px 30px;
+        cursor: pointer;
+        user-select: none;
+        transition: all 200ms ease-in;
+
+        &:hover {
+            background-color: lighten(colors(grey), 15%);
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            border: 4px solid transparent;
+            border-color: darken(colors(grey), 10%) transparent transparent transparent;
+        }
+
+        &.open {
+            background-color: lighten(colors(grey), 15%);
+            border-radius: 3px 3px 0px 0px;
+        }
+
+    }
+
+    &__list {
+        border-radius: 0px 0px 3px 3px;
+        overflow: hidden;
+        background-color: colors(white);
+        border-right: 1px solid darken(colors(grey), 10%);
+        border-left: 1px solid darken(colors(grey), 10%);
+        border-bottom: 1px solid darken(colors(grey), 10%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        &.selectHide {
+            display: none;
+        }
+
+    }
+
+    &__item {
+        color: darken(colors(grey), 10%);
+        padding: 10px;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: darken(colors(grey), 10%);
+            color: colors(white);
+        }
+
+    }
+
+}

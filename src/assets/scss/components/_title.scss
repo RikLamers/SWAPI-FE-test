@@ -1,0 +1,26 @@
+.c-title {
+
+    a {
+        text-decoration: none;
+        color: colors(black);
+        transition: all 200ms ease-in;
+
+        &:hover {
+            color: lighten(colors(black), 25%);
+        }
+
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    hr {
+        width: 75px;
+        height: 5px;
+        background-color: colors(yellow);
+        border: none;
+        border-radius: 3px;
+    }
+    
+}

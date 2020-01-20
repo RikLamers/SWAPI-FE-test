@@ -1,0 +1,24 @@
+$bp: (
+    xs: 480px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+@function breakpoint($break-level) {
+	@return map-get($bp, $break-level);
+}
+
+$colorsArray: (
+	grey: #ccc,
+	black: #000,
+	white: #fff,
+	text-color: #333333,
+	yellow: #FFE81F,
+	error: rgb(173, 14, 14)
+);
+
+@function colors($color) {
+	@return map-get($colorsArray, $color);
+}

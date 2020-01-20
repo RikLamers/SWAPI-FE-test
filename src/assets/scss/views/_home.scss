@@ -1,0 +1,93 @@
+.v-home {
+
+    &__viewmore {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        a {
+            padding: 10px 0;
+            background: transparent;
+            border-radius: 3px;
+            min-width: 250px;
+            width: 100%;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: colors(white);
+            background-color: colors(black);
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 200ms ease-in;
+
+            &:hover {
+                background-color: colors(yellow);
+                color: colors(black);
+            }
+
+            @media only screen and (min-width: breakpoint(xs)) {
+                width: 300px;
+            }
+
+            @media only screen and (min-width: breakpoint(lg)) {
+                width: 400px;
+            }
+
+        }
+    }
+
+    .c-card--planet {
+        margin-top: 0;
+    }
+
+    &__carousel {
+        // calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+        height: calc(325px + (575 - 325) * ((100vw - 320px) / (576 - 320)));
+        margin-top: 50px;
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            height: 550px
+        }
+
+        @media only screen and (min-width: breakpoint(md)) {
+            height: 375px;
+
+            .vueperslides__bullets--outside {
+                position: absolute;
+            }
+
+        }
+
+        @media only screen and (min-width: breakpoint(lg)) {
+            height: 325px;
+        }
+
+        @media only screen and (min-width: breakpoint(xl)) {
+            height: 400px;
+        }
+
+    }
+
+    .vueperslides {
+        height: 100%;
+
+        @media only screen and (min-width: breakpoint(xs)) {
+            // min-height: 425px;
+        }
+
+        &__inner {
+            height: inherit;
+        }
+
+        &__parallax-wrapper {
+            height: inherit;
+        }
+
+        &__bullets {
+            bottom: -30px;
+        }
+
+    }
+
+}

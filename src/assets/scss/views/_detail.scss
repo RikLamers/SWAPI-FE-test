@@ -1,0 +1,110 @@
+.v-detail {
+
+    &__center {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    &__img {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        margin-bottom: 50px;
+
+        @media only screen and (min-width: breakpoint(md)) {
+            padding: 25px 0;
+        }
+
+    }
+
+    &__container {
+        border-radius: 3px;
+        z-index: 1;
+        left: 100%;
+        transform: translateX(-100%);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-width: 220px;
+        
+        width: 100%;
+
+        max-width: 75%;
+        min-height: 200px;
+
+        @media only screen and (min-width: breakpoint(xs)) {
+            min-width: 350px;
+            max-width: 375px;
+            min-height: 325px;
+        }
+
+        @media only screen and (min-width: breakpoint(sm)) {
+            max-width: 380px;
+        }
+
+        @media only screen and (min-width: breakpoint(md)) {
+            max-width: 520px;
+        }
+
+        @media only screen and (min-width: breakpoint(lg)) {
+            max-width: 340px;
+            min-width: 300px;
+        }
+
+        @media only screen and (min-width: breakpoint(xl)) {
+            width: 400px;
+            min-height: 325px;
+            min-width: 400px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+    }
+
+    &__label {
+        height: 100%;
+        width: 50%;
+        background-color: colors(yellow);
+        position: absolute;
+        border-radius: 3px;
+
+        @media only screen and (min-width: breakpoint(lg)) {
+            // height: 75%;
+        }
+
+        @media only screen and (min-width: breakpoint(xl)) {
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform-origin: center center;
+            transform: translate(-50%,-50%) rotate(-90deg);
+            opacity: .5;
+            width: 100%;
+        }
+
+    }
+
+    &__content {
+        margin-bottom: 50px;
+
+        @media only sreen and (min-width: breakpoint(md)) {
+            margin-bottom: 0;
+        }
+
+    }
+
+}

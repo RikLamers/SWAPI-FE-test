@@ -1,0 +1,12 @@
+.c-footer {
+    padding: 30px 0 0;
+    background-color: colors(black);
+    border: 1px solid lighten(colors(black), 10%);
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 175px;
+    }
+
+}

@@ -1,0 +1,123 @@
+// general styling
+.c-card {
+    display: flex;
+    flex-direction: column;
+
+    a {
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
+
+        }
+        
+    }
+
+    img {
+        transition: transform 200ms ease-in;
+    }
+
+    &__content {
+        background-color: lighten(colors(grey), 10%);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+
+        // Button + icon styling
+        a {
+            align-self: flex-end;
+            margin-top: auto;
+            padding: 10px 20px;
+            border: none;
+            background-color: colors(black);
+            text-decoration: none;
+            color: colors(white);
+            text-transform: uppercase;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 200ms ease-in;
+
+            .c-card__icon {
+                margin-left: 10px;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 1px;
+                    top: 50%;
+                    transform: translateY(-0.75px);
+                    background-color: colors(white);
+                }
+
+                svg {
+                    position: relative;
+                    left: 0;
+                    transition: all 200ms ease-in;
+                }
+
+            }
+
+            &:hover {
+                background-color: colors(yellow);
+                color: colors(black);
+
+                .c-card__icon {
+                    transform: translateX(10px);
+
+                    &:before {
+                        background-color: colors(black);
+                    }
+
+                }
+
+                svg {
+                    left: 5px;
+                }
+
+                g {
+                    fill: colors(black);
+                }
+
+            }
+
+        }
+
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: colors(white);
+        padding: 20px;
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+    }
+
+}
+
+@import './card/character';
+@import './card/starship';
+@import './card/planet';

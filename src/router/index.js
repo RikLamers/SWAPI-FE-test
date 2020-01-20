@@ -53,7 +53,16 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior () {
-    return { x: 0, y: 0 }
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(
+          {
+            x: 0,
+            y: 0
+          }
+        )
+      }, 750)
+    })
   }
 })
 

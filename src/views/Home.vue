@@ -23,7 +23,7 @@
           <Title title="Popular Planets" link="/planets" />
           <div class="row">
             <Loader v-if="!planets.results" />
-            <div class="col-12">
+            <div v-else class="col-12">
               <div class="v-home__carousel">
                 <vueper-slides
                   class="no-shadow"

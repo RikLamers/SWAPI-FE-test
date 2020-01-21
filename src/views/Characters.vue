@@ -3,7 +3,7 @@
     <main class="container">
       <div class="v-characters">
         <section class="characters">
-          <Title title="Star Wars Characters" :margin="titleMargin" />
+          <Title title="Star Wars Characters" />
           <div class="row">
             <div class="col-12 col-sm-6 col-lg-3">
               <Dropdown :options="genderFilters.filters" :title="genderFilters.title" @input="receivedGender" />
@@ -52,7 +52,6 @@ export default {
   },
   data () {
     return {
-      titleMargin: 'margin-bottom: 50px',
       genderFilters: {
         title: 'Filter',
         filters: ['All', 'Male', 'Female', 'Hermaphrodite', 'Robot']

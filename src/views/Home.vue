@@ -98,16 +98,6 @@ export default {
   },
   data () {
     return {
-      slides: [
-        {
-          title: 'slide #1',
-          content: 'slide content'
-        },
-        {
-          title: 'Slide #2',
-          content: 'content of the second slide'
-        }
-      ],
       slideBreakpoints: {
         992: {
           visibleSlides: 2,

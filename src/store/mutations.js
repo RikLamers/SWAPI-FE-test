@@ -1,11 +1,15 @@
 export default {
   getCharacterData (state, payload) {
+    // Set initial payload to state
     state.characters = payload
+    // spread data to state of allData combined
     state.allData = [...state.allData, ...payload.results]
   },
 
   addAllCharacters (state, payload) {
+    // Spread previous state on state + new payload
     state.characters.results = [...state.characters.results, ...payload]
+    // Add to allData state the new data
     state.allData = [...state.allData, ...payload]
   },
 
@@ -30,11 +34,13 @@ export default {
   },
 
   addErrorToArray (state, message, id, error) {
+    // create error object
     const errorObj = {
       message,
       id,
       originalError: error
     }
+    // spread all errors + add new error object
     state.errors = [...state.errors, errorObj]
   },
 

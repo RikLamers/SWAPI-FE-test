@@ -38,6 +38,7 @@ export default {
     ])
   },
   methods: {
+    // locally because a getter was to slow to dispatch everytime, would cause errors
     searchAllArrays () {
       this.searchedData = []
       if (this.searchTerm !== '') {

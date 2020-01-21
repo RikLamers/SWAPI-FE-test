@@ -2,7 +2,7 @@ import uuid from 'uuid'
 
 const baseURL = 'https://swapi.co/api/'
 
-// function to modify Data to add a id and category
+// function to modify Data to add a id, category, image and measuring units
 const modifyData = (results, category, amountOfImagesAvail) => {
   const modified = results.map((item) => {
     // Add random ID
@@ -58,6 +58,7 @@ export default {
       }
     } catch (error) {
       const message = 'Something went wrong while fetching character data, please reload the page to try again!'
+      // Every error gets a unique ID to remove it later
       const id = uuid()
       commit('addErrorToArray', message, id, error)
     }

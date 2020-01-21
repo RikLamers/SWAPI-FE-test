@@ -62,6 +62,7 @@ export default {
     const tlHead = gsap.timeline({ repeat: -1 })
     const tlText = gsap.timeline({ repeat: -1 })
 
+    // animate body
     tlBody
       .to(this.$refs.droidBody, {
         duration: 1,
@@ -86,6 +87,7 @@ export default {
         x: '0px'
       }, '-=.1')
 
+    // animate head
     tlHead.to(this.$refs.droidHead, {
       duration: 1,
       rotate: -55,
@@ -112,6 +114,7 @@ export default {
       y: 0
     }, '-=.1')
 
+    // animate text
     tlText
       .to(this.$refs.loadingText, 1, {
         autoAlpha: 0,

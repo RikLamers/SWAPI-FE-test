@@ -3,7 +3,7 @@
     <main class="container">
       <div class="v-detail">
         <section class="detail">
-          <Title :title="detailedData.name" :margin="titleMargin" />
+          <Title :title="detailedData.name" />
           <div class="v-detail__content">
             <div class="row">
               <div class="col-12 col-lg-6">
@@ -44,7 +44,6 @@ export default {
   },
   data () {
     return {
-      titleMargin: 'margin-bottom: 50px',
       detailedData: {}
     }
   },

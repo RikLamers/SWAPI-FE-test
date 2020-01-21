@@ -1,5 +1,5 @@
 <template>
-<div class="c-title" :style="margin ? margin : null">
+<div class="c-title">
   <div class="row">
     <div class="col-12">
       <router-link v-if="link" :to="link">
@@ -17,8 +17,7 @@ export default {
   name: 'Title',
   props: [
     'link',
-    'title',
-    'margin'
+    'title'
   ]
 }
 </script>

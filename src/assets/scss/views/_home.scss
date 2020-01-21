@@ -72,10 +72,6 @@
     .vueperslides {
         height: 100%;
 
-        @media only screen and (min-width: breakpoint(xs)) {
-            // min-height: 425px;
-        }
-
         &__inner {
             height: inherit;
         }
